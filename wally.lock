@@ -90,7 +90,7 @@ dependencies = [["collections", "jsdotlua/collections@1.2.7"]]
 [[package]]
 name = "outsp/src"
 version = "0.1.0"
-dependencies = [["png", "synpixel/png@0.1.2"], ["react", "jsdotlua/react@17.2.1"], ["studiocomponents", "sircfenner/studiocomponents@1.2.0"]]
+dependencies = [["png", "synpixel/png@0.1.2"], ["react", "jsdotlua/react@17.2.1"], ["react-roblox", "jsdotlua/react-roblox@17.2.1"], ["studiocomponents", "sircfenner/studiocomponents@1.2.0"]]
 
 [[package]]
 name = "sircfenner/studiocomponents"
