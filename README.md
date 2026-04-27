@@ -1,30 +1,37 @@
-# Photo2Parts
+# 🧩 Photo2Parts
 
 Photo2Parts is a Roblox Studio plugin that turns a PNG image into real `Part` instances. It is useful for pixel art, logos, signs, map details, UI mockups built out of parts, or anything else where you want an image represented directly in the 3D world instead of uploading it as a decal.
 
 The plugin is built with Rojo, React, and StudioComponents.
 
-## What It Does
+## 🚀 Install
+
+The easiest way to use Photo2Parts is to install it from the Roblox Creator Store:
+
+https://create.roblox.com/store/asset/12386922454/Photo2Parts
+
+After installing it, open Roblox Studio and look for the **Photo2Parts** button in the plugin toolbar.
+
+## ✨ What It Does
 
 Photo2Parts imports a local PNG, samples it to the size you choose, then creates parts from the sampled pixels. Transparent pixels can be skipped, alpha can be preserved as part transparency, and nearby pixels can be merged into larger rectangles to keep the part count lower.
 
 The default setup makes a flat XZ mosaic in Workspace, but you can change the output plane, parent, scale, material, thickness, names, transparency, collisions, and several optimization settings.
 
-## How To Use
+## 🛠️ How To Use
 
-1. Start Rojo and sync the plugin into Studio.
-2. Open the **Photo2Parts** toolbar button.
-3. Click **Import PNG** and choose a PNG file from your computer.
-4. Pick the settings you want in the tabs:
+1. Open the **Photo2Parts** toolbar button in Studio.
+2. Click **Import PNG** and choose a PNG file from your computer.
+3. Pick the settings you want in the tabs:
    - **Output** controls naming, parent, pixel size, position, plane, and model creation.
    - **Scaling** controls output dimensions and color mode.
    - **Optimization** controls merging, color tolerance, alpha handling, and batching.
    - **Part Properties** controls material, thickness, transparency, anchoring, collisions, and shadows.
-5. Click **Generate Parts**.
+4. Click **Generate Parts**.
 
 The status area shows the imported file, target dimensions, and an estimated part count before generation.
 
-## Useful Settings
+## ⚙️ Useful Settings
 
 - **Max dimension** is the easiest way to make large images manageable. For example, a 512x512 image can be reduced to 128x128 before parts are created.
 - **Merge mode** can greatly reduce part count. Exact merging keeps colors strict, while similar merging groups nearby colors together.
@@ -36,7 +43,9 @@ The status area shows the imported file, target dimensions, and an estimated par
 
 For a full list of options, see [PHOTO2PARTS_OPTIONS.md](PHOTO2PARTS_OPTIONS.md).
 
-## Development
+## 💻 Development With Rojo
+
+Rojo sync is only needed if you want to work on the source code locally. If you just want to use the plugin, install it from the Creator Store link above.
 
 Install dependencies with Wally if needed:
 
