@@ -1,7 +1,3 @@
-# 🧩 Photo2Parts Options
-
-Photo2Parts imports a PNG, samples it to the target size, plans the smallest practical set of rectangles, and creates Roblox `Part` instances for those rectangles.
-
 ## 📦 Output
 
 - **Model name**: Name used for the generated `Model` when model container creation is enabled.
@@ -56,9 +52,3 @@ Presets are quick starting points. You can apply one, then adjust any setting af
 - **Sign / Logo**: Preserves transparency and uses thin smooth parts for clean graphics.
 - **Black & White Silhouette**: Converts the image into bold black-and-white blocks with fewer color groups.
 - **Neon Display**: Uses Neon material and thin, non-shadow-casting parts for bright signs and display-style images.
-
-## 💡 Practical Presets
-
-- **Best fidelity**: Original color, exact merge, no quantization, minimum area 1.
-- **Balanced**: Max dimension 128-256, similar merge, color tolerance 8-16, average merged colors on.
-- **Lowest part count**: Black and white or grayscale, similar merge, color tolerance 24+, quantize colors on, minimum area 2+.
