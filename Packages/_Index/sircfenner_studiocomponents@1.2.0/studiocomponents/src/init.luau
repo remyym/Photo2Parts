@@ -1,0 +1,30 @@
+return {
+	Constants = require(script:FindFirstChild('Constants')),
+
+	Background = require(script:FindFirstChild('Components'):FindFirstChild('Background')),
+	Button = require(script:FindFirstChild('Components'):FindFirstChild('Button')),
+	Checkbox = require(script:FindFirstChild('Components'):FindFirstChild('Checkbox')),
+	ColorPicker = require(script:FindFirstChild('Components'):FindFirstChild('ColorPicker')),
+	DatePicker = require(script:FindFirstChild('Components'):FindFirstChild('DatePicker')),
+	Dropdown = require(script:FindFirstChild('Components'):FindFirstChild('Dropdown')),
+	DropShadowFrame = require(script:FindFirstChild('Components'):FindFirstChild('DropShadowFrame')),
+	Label = require(script:FindFirstChild('Components'):FindFirstChild('Label')),
+	LoadingDots = require(script:FindFirstChild('Components'):FindFirstChild('LoadingDots')),
+	MainButton = require(script:FindFirstChild('Components'):FindFirstChild('MainButton')),
+	NumberSequencePicker = require(script:FindFirstChild('Components'):FindFirstChild('NumberSequencePicker')),
+	NumericInput = require(script:FindFirstChild('Components'):FindFirstChild('NumericInput')),
+	PluginProvider = require(script:FindFirstChild('Components'):FindFirstChild('PluginProvider')),
+	ProgressBar = require(script:FindFirstChild('Components'):FindFirstChild('ProgressBar')),
+	RadioButton = require(script:FindFirstChild('Components'):FindFirstChild('RadioButton')),
+	ScrollFrame = require(script:FindFirstChild('Components'):FindFirstChild('ScrollFrame')),
+	Slider = require(script:FindFirstChild('Components'):FindFirstChild('Slider')),
+	Splitter = require(script:FindFirstChild('Components'):FindFirstChild('Splitter')),
+	TabContainer = require(script:FindFirstChild('Components'):FindFirstChild('TabContainer')),
+	TextInput = require(script:FindFirstChild('Components'):FindFirstChild('TextInput')),
+
+	ThemeContext = require(script:FindFirstChild('Contexts'):FindFirstChild('ThemeContext')),
+
+	useTheme = require(script:FindFirstChild('Hooks'):FindFirstChild('useTheme')),
+	usePlugin = require(script:FindFirstChild('Hooks'):FindFirstChild('usePlugin')),
+	useMouseIcon = require(script:FindFirstChild('Hooks'):FindFirstChild('useMouseIcon')),
+}

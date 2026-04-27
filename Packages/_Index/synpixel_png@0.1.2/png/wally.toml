@@ -1,0 +1,13 @@
+[package]
+name = "synpixel/png"
+description = "Fork of MaximumADHD's Roblox-PNG-Library modified for Wally"
+version = "0.1.2"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+license = "MIT"
+authors = ["MaximumADHD"]
+
+exclude = ["**"]
+include = ["src", "src/*", "packaged.project.json", "default.project.json", "wally.lock", "wally.toml"]
+
+[dependencies]

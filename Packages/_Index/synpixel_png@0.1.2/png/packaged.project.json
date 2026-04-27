@@ -1,0 +1,9 @@
+{
+  "name": "PNG",
+  "tree": {
+    "$path": { "optional": "Packages" },
+    "PNG": {
+      "$path": "src"
+    }
+  }
+}

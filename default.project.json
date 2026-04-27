@@ -1,0 +1,16 @@
+{
+  "name": "plugin",
+  "tree": {
+    "$className": "DataModel",
+    "ServerStorage": {
+      "Photo2Parts": {
+        "$className": "Folder",
+        "$path": "src",
+        "Packages": {
+          "$className": "Folder",
+          "$path": "Packages"
+        }
+      }
+    }
+  }
+}

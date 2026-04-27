@@ -1,0 +1,11 @@
+[package]
+name = "sircfenner/studiocomponents"
+description = "React components for building Roblox Studio plugins"
+version = "1.2.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+license = "MIT"
+
+[dependencies]
+react = "jsdotlua/react@^17.2.1"
+"react-roblox" = "jsdotlua/react-roblox@^17.2.1"

@@ -1,0 +1,10 @@
+[package]
+name = "outsp/src"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+studiocomponents = "sircfenner/studiocomponents@1.0.0"
+png = "synpixel/png@0.1.2"
+react = "jsdotlua/react@17.1.0"
