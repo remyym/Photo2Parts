@@ -102,6 +102,31 @@ local function checkbox(label, order, settings, setSettings, key)
 	})
 end
 
+local function presetButton(order, preset, settings, setSettings, setStatus)
+	return React.createElement("Frame", {
+		BackgroundTransparency = 1,
+		Size = UDim2.new(1, 0, 0, 64),
+		LayoutOrder = order,
+	}, {
+		Button = React.createElement(StudioComponents.Button, {
+			Text = preset.Name,
+			Size = UDim2.new(1, 0, 0, 24),
+			OnActivated = function()
+				setSettings(Settings.applyPreset(settings, preset))
+				setStatus(`Applied preset: {preset.Name}.`)
+			end,
+		}),
+		Description = React.createElement(StudioComponents.Label, {
+			Text = preset.Description,
+			Position = UDim2.fromOffset(0, 28),
+			Size = UDim2.new(1, 0, 0, 34),
+			TextWrapped = true,
+			TextXAlignment = Enum.TextXAlignment.Left,
+			TextYAlignment = Enum.TextYAlignment.Top,
+		}),
+	})
+end
+
 local function panel(children)
 	return React.createElement(StudioComponents.ScrollFrame, {
 		Size = UDim2.fromScale(1, 1),
@@ -443,6 +468,14 @@ local function App(props)
 		})
 	end
 
+	local function buildPresetsTab()
+		local children = {}
+		for index, preset in Settings.Presets do
+			children[`Preset{index}`] = presetButton(index, preset, settings, setSettings, setStatus)
+		end
+		return panel(children)
+	end
+
 	return React.createElement(StudioComponents.Background, {}, {
 		Header = React.createElement("Frame", {
 			BackgroundTransparency = 1,
@@ -510,6 +543,10 @@ local function App(props)
 			["Part Properties"] = {
 				LayoutOrder = 4,
 				Content = buildPartPropertiesTab(),
+			},
+			Presets = {
+				LayoutOrder = 5,
+				Content = buildPresetsTab(),
 			},
 		}),
 	})

@@ -1,8 +1,8 @@
-# Photo2Parts Options
+# 🧩 Photo2Parts Options
 
 Photo2Parts imports a PNG, samples it to the target size, plans the smallest practical set of rectangles, and creates Roblox `Part` instances for those rectangles.
 
-## Output
+## 📦 Output
 
 - **Model name**: Name used for the generated `Model` when model container creation is enabled.
 - **Part prefix**: Prefix used for generated part names.
@@ -13,7 +13,7 @@ Photo2Parts imports a PNG, samples it to the target size, plans the smallest pra
 - **Center at origin**: Centers the generated image around the origin of its output plane.
 - **Create model container**: Parents generated parts into a new `Model`; otherwise parts go directly into the selected parent.
 
-## Scaling
+## 📐 Scaling
 
 - **Mode**: Original size, exact output width/height, or maximum dimension.
 - **Output width / height**: Target dimensions used by exact-size scaling.
@@ -21,7 +21,7 @@ Photo2Parts imports a PNG, samples it to the target size, plans the smallest pra
 - **Color mode**: Original color, grayscale, or black and white.
 - **B/W threshold**: Brightness cutoff for black-and-white output.
 
-## Optimization
+## ⚡ Optimization
 
 - **Merge mode**: No merging, exact-color rectangle merging, or similar-color rectangle merging.
 - **Color tolerance**: Larger values group nearby colors together for similar-color merging.
@@ -35,7 +35,7 @@ Photo2Parts imports a PNG, samples it to the target size, plans the smallest pra
 - **Ignore alpha for merging**: Allows pixels with different transparency to merge together.
 - **Yield during generation**: Pauses between batches so Studio stays responsive on large outputs.
 
-## Part Properties
+## 🧱 Part Properties
 
 - **Material**: Roblox material assigned to every generated part.
 - **Thickness**: Thin, cube, or custom part thickness.
@@ -45,7 +45,19 @@ Photo2Parts imports a PNG, samples it to the target size, plans the smallest pra
 - **Can collide**: Enables collisions on generated parts.
 - **Cast shadows**: Enables shadow casting on generated parts.
 
-## Practical Presets
+## 🎛️ Presets
+
+Presets are quick starting points. You can apply one, then adjust any setting afterward.
+
+- **Default**: Restores the normal balanced settings.
+- **Pixel Art**: Keeps exact colors and hard edges. Good for sprites, pixel logos, and low-resolution art.
+- **Low Part Count**: Uses stronger similar-color merging, quantization, and tiny-region cleanup. Good when performance matters more than perfect color detail.
+- **Detailed Photo**: Keeps more color detail while still using similar-color rectangle merging.
+- **Sign / Logo**: Preserves transparency and uses thin smooth parts for clean graphics.
+- **Black & White Silhouette**: Converts the image into bold black-and-white blocks with fewer color groups.
+- **Neon Display**: Uses Neon material and thin, non-shadow-casting parts for bright signs and display-style images.
+
+## 💡 Practical Presets
 
 - **Best fidelity**: Original color, exact merge, no quantization, minimum area 1.
 - **Balanced**: Max dimension 128-256, similar merge, color tolerance 8-16, average merged colors on.

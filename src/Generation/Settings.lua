@@ -81,6 +81,103 @@ Settings.Default = {
 	CreateModelContainer = true,
 }
 
+Settings.Presets = {
+	{
+		Name = "Default",
+		Description = "Balanced defaults for most images.",
+		Settings = {},
+	},
+	{
+		Name = "Pixel Art",
+		Description = "Keeps hard edges and exact colors for sprites, icons, and pixel art.",
+		Settings = {
+			MaxDimension = 128,
+			ColorMode = "Original",
+			MergeMode = "Exact",
+			ColorTolerance = 0,
+			AlphaTolerance = 0,
+			QuantizeColors = false,
+			AverageMergedColors = false,
+			MinimumRegionArea = 1,
+			ThicknessPreset = "Cube",
+			Material = "SmoothPlastic",
+		},
+	},
+	{
+		Name = "Low Part Count",
+		Description = "Aggressively reduces part count for large or detailed photos.",
+		Settings = {
+			MaxDimension = 96,
+			MergeMode = "Similar",
+			ColorTolerance = 28,
+			AlphaTolerance = 48,
+			QuantizeColors = true,
+			AverageMergedColors = true,
+			IgnoreAlphaForMerging = true,
+			MinimumRegionArea = 3,
+			ThicknessPreset = "Thin",
+			CastShadow = false,
+			CanCollide = false,
+		},
+	},
+	{
+		Name = "Detailed Photo",
+		Description = "Keeps more color detail while still merging similar rectangles.",
+		Settings = {
+			MaxDimension = 192,
+			ColorMode = "Original",
+			MergeMode = "Similar",
+			ColorTolerance = 8,
+			AlphaTolerance = 12,
+			QuantizeColors = false,
+			AverageMergedColors = true,
+			MinimumRegionArea = 1,
+			ThicknessPreset = "Thin",
+		},
+	},
+	{
+		Name = "Sign / Logo",
+		Description = "Good for clean graphics with transparency and simple shapes.",
+		Settings = {
+			MaxDimension = 160,
+			MergeMode = "Exact",
+			TransparencyCutoff = 8,
+			SkipTransparentPixels = true,
+			PreserveTransparency = true,
+			MinimumRegionArea = 1,
+			Material = "SmoothPlastic",
+			ThicknessPreset = "Thin",
+		},
+	},
+	{
+		Name = "Black & White Silhouette",
+		Description = "Turns the image into bold black-and-white blocks.",
+		Settings = {
+			MaxDimension = 128,
+			ColorMode = "BlackWhite",
+			BlackWhiteThreshold = 128,
+			MergeMode = "Exact",
+			QuantizeColors = false,
+			MinimumRegionArea = 2,
+			Material = "SmoothPlastic",
+		},
+	},
+	{
+		Name = "Neon Display",
+		Description = "Creates bright, non-shadow-casting parts for signs and displays.",
+		Settings = {
+			MaxDimension = 128,
+			MergeMode = "Similar",
+			ColorTolerance = 12,
+			AlphaTolerance = 24,
+			Material = "Neon",
+			ThicknessPreset = "Thin",
+			CastShadow = false,
+			CanCollide = false,
+		},
+	},
+}
+
 local function clampNumber(value, min, max, fallback)
 	local number = tonumber(value)
 	if number == nil or number ~= number then
@@ -91,6 +188,14 @@ end
 
 function Settings.copyDefaults()
 	return table.clone(Settings.Default)
+end
+
+function Settings.applyPreset(baseSettings, preset)
+	local output = if preset.Name == "Default" then Settings.copyDefaults() else table.clone(baseSettings)
+	for key, value in preset.Settings do
+		output[key] = value
+	end
+	return Settings.sanitize(output)
 end
 
 function Settings.sanitize(input)
