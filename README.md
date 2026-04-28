@@ -1,47 +1,48 @@
-# 🧩 Photo2Parts
+# <div align="center">![photo2parts](https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/5/d/8/9/5d89460e24aa1e3258e165be3e20c5b096987585.png)</div>
 
-Photo2Parts is a Roblox Studio plugin that turns a PNG image into real `Part` instances. It is useful for pixel art, logos, signs, map details, UI mockups built out of parts, or anything else where you want an image represented directly in the 3D world instead of uploading it as a decal.
+<div align="center">
 
-The plugin is built with Rojo, React, and StudioComponents.
+Convert PNG images into parts.
 
-## 🚀 Install
+[![release v1.4.1](https://img.shields.io/badge/plugin-v2.0.0-blue?logo=roblox)](https://create.roblox.com/store/asset/12386922454/Photo2Parts) [![docs](https://img.shields.io/badge/github-repo-d?logo=github)](https://github.com/remyym/Photo2Parts) [![website](https://img.shields.io/badge/docs-website-green)](https://github.com/remyym/Photo2Parts/blob/main/Options.md)
 
-The easiest way to use Photo2Parts is to install it from the Roblox Creator Store:
+</div>
 
-https://create.roblox.com/store/asset/12386922454/Photo2Parts
+---
 
-After installing it, open Roblox Studio and look for the **Photo2Parts** button in the plugin toolbar.
+![Plugin](https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/5X/b/c/1/a/bc1a47fa06d239736fb256fa79c99d07520da73a.png)
 
-## ✨ What It Does
+## 🤔 What does it do?
 
-Photo2Parts imports a local PNG, samples it to the size you choose, then creates parts from the sampled pixels. Transparent pixels can be skipped, alpha can be preserved as part transparency, and nearby pixels can be merged into larger rectangles to keep the part count lower.
+Allows you turn a PNG into parts without having to upload it as a decal in Roblox.
 
-The default setup makes a flat XZ mosaic in Workspace, but you can change the output plane, parent, scale, material, thickness, names, transparency, collisions, and several optimization settings.
+## 🔥 How does it work?
 
-## 🛠️ How To Use
+Asks the user to import a PNG file, reads it using MaximumADHD’s PNG Library, then loops through each RGB value creating a new part. Each pixel has an alpha value allowing the part to be transparent.
 
-1. Open the **Photo2Parts** toolbar button in Studio.
-2. Click **Import PNG** and choose a PNG file from your computer.
-3. Pick the settings you want in the tabs:
-   - **Output** controls naming, parent, pixel size, position, plane, and model creation.
-   - **Scaling** controls output dimensions and color mode.
-   - **Optimization** controls merging, color tolerance, alpha handling, and batching.
-   - **Part Properties** controls material, thickness, transparency, anchoring, collisions, and shadows.
-4. Click **Generate Parts**.
+There are tons of options that let you scale and optimize the image.
 
-The status area shows the imported file, target dimensions, and an estimated part count before generation.
+## 🚀 Instructions
 
-## ⚙️ Useful Settings
+Install **[Photo2Parts](https://create.roblox.com/store/asset/12386922454/Photo2Parts)** and open it from the Plugins tab in Roblox Studio.
 
-- **Max dimension** is the easiest way to make large images manageable. For example, a 512x512 image can be reduced to 128x128 before parts are created.
-- **Merge mode** can greatly reduce part count. Exact merging keeps colors strict, while similar merging groups nearby colors together.
-- **Color tolerance** makes similar merging more aggressive. Higher values usually mean fewer parts and less color detail.
-- **Quantize colors** snaps colors into fewer buckets, which can help rectangle merging.
-- **Minimum area** drops tiny regions, which is handy for noisy images.
-- **Black and white** or **grayscale** output can make simple signs and silhouettes much cheaper to generate.
-- **Use Selection** lets you parent the generated model or parts under a selected instance instead of Workspace.
+1. Press **Import PNG**
 
-For a full list of options, see [PHOTO2PARTS_OPTIONS.md](PHOTO2PARTS_OPTIONS.md).
+2. Choose your image
+
+3. Adjust the settings if needed
+
+4. Press **Generate Parts**
+
+For a full list of options, see [Options.md](Options.md).
+
+---
+
+## ⚠️ Important
+
+This is best for smaller images, pixel art, logos, and simple graphics. Large detailed photos can create a lot of parts, so save your work first and scale images down before generating.
+
+Please make sure you use it in a way that follows Roblox's Terms of Use.
 
 ## 💻 Development With Rojo
 
